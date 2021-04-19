@@ -1,0 +1,6 @@
+C:\Users\ferna\Desktop\Nueva carpeta\TP1\Entidades\bin\Debug\Entidades.dll
+C:\Users\ferna\Desktop\Nueva carpeta\TP1\Entidades\bin\Debug\Entidades.pdb
+C:\Users\ferna\Desktop\Nueva carpeta\TP1\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\ferna\Desktop\Nueva carpeta\TP1\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\ferna\Desktop\Nueva carpeta\TP1\Entidades\obj\Debug\Entidades.dll
+C:\Users\ferna\Desktop\Nueva carpeta\TP1\Entidades\obj\Debug\Entidades.pdb
