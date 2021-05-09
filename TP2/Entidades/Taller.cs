@@ -9,34 +9,21 @@ namespace Entidades
     /// <summary>
     /// No podrá tener clases heredadas.
     /// </summary>
-    public class Taller
+    public sealed class Taller
     {
         private List<Vehiculo> vehiculos;
         private int espacioDisponible;
 
-
-        #region "Constructores"
         private Taller()
         {
-            this.vehiculos = new List<Vehiculo>();
+            List<Vehiculo> list = new List<Vehiculo>();
+            vehiculos = list;
         }
-        public Taller(int espacioDisponible) : this()
+
+        public Taller(int espacioDisponible) :this()
         {
             this.espacioDisponible = espacioDisponible;
         }
-        #endregion
-
-        #region "Sobrecargas"
-        /// <summary>
-        /// Muestro el estacionamiento y TODOS los vehículos
-        /// </summary>
-        /// <returns></returns>
-        public override string ToString()
-        {
-
-            return this.Listar(this, ETipo.Todos);
-        }
-        #endregion
 
         #region "Métodos"
 
@@ -47,7 +34,7 @@ namespace Entidades
         /// <param name="taller">Elemento a exponer</param>
         /// <param name="ETipo">Tipos de ítems de la lista a mostrar</param>
         /// <returns></returns>
-        public string Listar(Taller taller, ETipo tipo)
+        public static string Listar(Taller taller, ETipo tipo)
         {
             StringBuilder sb = new StringBuilder();
 
@@ -72,11 +59,11 @@ namespace Entidades
 
                         break;
                     case ETipo.SUV:
-                        if(v is Suv)
+                        if (v is Suv)
                         {
                             sb.AppendLine(v.Mostrar());
                         }
-                        
+
                         break;
                     default:
                         sb.AppendLine(v.Mostrar());
@@ -88,7 +75,17 @@ namespace Entidades
         }
         #endregion
 
-        #region "Operadores"
+        #region "Sobrecargas"
+        /// <summary>
+        /// Muestro el estacionamiento y TODOS los vehículos
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+
+            return Taller.Listar(this, ETipo.Todos);
+        }
+
         /// <summary>
         /// Agregará un elemento a la lista
         /// </summary>
@@ -97,21 +94,16 @@ namespace Entidades
         /// <returns></returns>
         public static Taller operator +(Taller taller, Vehiculo vehiculo)
         {
-
-            if (taller.vehiculos.Count < taller.espacioDisponible)
+            foreach (Vehiculo v in taller.vehiculos)
             {
-                if (taller != vehiculo)
+                if (v == vehiculo)
                 {
-                    taller.vehiculos.Add(vehiculo);
-                }
-                else
-                {
-                    Console.WriteLine("Ya se encuentra el vehiculo en el taller");
+                    return taller;
                 }
             }
-            else
+            if(taller.vehiculos.Count < taller.espacioDisponible)
             {
-                Console.WriteLine("Sin espacio disponible");
+                taller.vehiculos.Add(vehiculo);
             }
 
 
@@ -125,32 +117,18 @@ namespace Entidades
         /// <returns></returns>
         public static Taller operator -(Taller taller, Vehiculo vehiculo)
         {
-            if (taller == vehiculo)
+            foreach (Vehiculo v in taller.vehiculos)
             {
-                taller.vehiculos.Remove(vehiculo);
+                if (v == vehiculo)
+                {
+                    taller.vehiculos.Remove(vehiculo);
+                    break;
+                }
             }
 
             return taller;
         }
 
-        public static bool operator ==(Taller taller, Vehiculo vehiculo)
-        {
-            bool retorno = false;
-            foreach (Vehiculo v in taller.vehiculos)
-            {
-                if (v == vehiculo)
-                {
-                    retorno = true;
-                    break;
-                }
-            }
-            return retorno;
-        }
-
-        public static bool operator !=(Taller taller, Vehiculo vehiculo)
-        {
-            return !(taller == vehiculo);
-        }
         #endregion
 
         #region "Enumerados"
