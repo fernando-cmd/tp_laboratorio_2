@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EDB0C501-8DF5-411C-9874-51D1184DFFF9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>VistaFabrica</RootNamespace>
+    <AssemblyName>VistaFabrica</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmFabricarClasico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFabricarClasico.Designer.cs">
+      <DependentUpon>frmFabricarClasico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFabricarGraduables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFabricarGraduables.Designer.cs">
+      <DependentUpon>frmFabricarGraduables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFabricarSol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFabricarSol.Designer.cs">
+      <DependentUpon>frmFabricarSol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFabricarVistaPrevia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFabricarVistaPrevia.Designer.cs">
+      <DependentUpon>frmFabricarVistaPrevia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInformes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInformes.Designer.cs">
+      <DependentUpon>frmInformes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrincipal.Designer.cs">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStock.Designer.cs">
+      <DependentUpon>frmStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmFabricarClasico.resx">
+      <DependentUpon>frmFabricarClasico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFabricarGraduables.resx">
+      <DependentUpon>frmFabricarGraduables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFabricarSol.resx">
+      <DependentUpon>frmFabricarSol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFabricarVistaPrevia.resx">
+      <DependentUpon>frmFabricarVistaPrevia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInformes.resx">
+      <DependentUpon>frmInformes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStock.resx">
+      <DependentUpon>frmStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clasico.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DeSol.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diferencias-entre-miopia-y-astigmatismo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clasicoo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cla00001893-_a_---lente-con-aumento.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flat,128x,075,f-pad,128x128,f8f8f8.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\415ocA518dL._SX425_.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\oftalmologo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\oftalmólogo-y-niño-paciente-médico-oculista-hombre-con-una-visión-de-control-la-cubierta-blanca-cuadro-examen-especialistas-162227420.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\415ocA518dL._SX425_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Single-E-Test-Card.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{7f0cb5fb-61ad-44ef-8b33-cbf9babe4b17}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
