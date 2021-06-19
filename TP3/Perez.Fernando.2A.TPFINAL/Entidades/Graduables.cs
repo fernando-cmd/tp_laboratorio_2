@@ -22,14 +22,9 @@ namespace Entidades
         /// </summary>
         public double OjoDerecho { get { return this._ojoDerecho; } set { this._ojoDerecho = value; } }
         #endregion
-        /// <summary>
-        /// Constructor vacio
-        /// </summary>
-        public Graduables()
-        {
 
-        }
         #region Constructores
+                
         /// <summary>
         /// Constructor publico de un anteojo con graduacion.
         /// </summary>
