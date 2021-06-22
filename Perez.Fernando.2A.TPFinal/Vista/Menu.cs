@@ -13,12 +13,17 @@ namespace Vista
     public partial class Menu : Form
     {
         protected DepositoFabrica<Anteojo> deposito;
+
+        #region Constructor
         public Menu()
         {
             InitializeComponent();
             this.deposito = new DepositoFabrica<Anteojo>("Fabrica");
+            this.deposito.DireccionXml = AppDomain.CurrentDomain.BaseDirectory + "AnteojosProducidos.xml";
         }
+        #endregion
 
+        #region Eventos
         private void btnFabricarClasico_Click(object sender, EventArgs e)
         {
             frmFabricarClasico frmClasico = new frmFabricarClasico();            
@@ -67,5 +72,21 @@ namespace Vista
             }
             this.Show();
         }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if(this.deposito.Lista.Count > 0)
+            {
+                Archivos<Anteojo>.GuardarFabrica(this.deposito);
+                MessageBox.Show("Se guardaron los datos correctamente");
+            }
+            else
+            {
+                MessageBox.Show("No se han producido anteojos hasta el momento");
+            }
+        }
+        #endregion
+
+
     }
 }

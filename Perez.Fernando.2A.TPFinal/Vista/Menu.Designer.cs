@@ -40,7 +40,7 @@ namespace Vista
             // btnFabricarClasico
             // 
             this.btnFabricarClasico.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnFabricarClasico.Font = new System.Drawing.Font("Yu Gothic UI Semilight", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFabricarClasico.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFabricarClasico.ForeColor = System.Drawing.SystemColors.InfoText;
             this.btnFabricarClasico.Location = new System.Drawing.Point(12, 12);
             this.btnFabricarClasico.Name = "btnFabricarClasico";
@@ -53,7 +53,7 @@ namespace Vista
             // btnGuardar
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnGuardar.Font = new System.Drawing.Font("Yu Gothic UI Semilight", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.SystemColors.InfoText;
             this.btnGuardar.Location = new System.Drawing.Point(12, 214);
             this.btnGuardar.Name = "btnGuardar";
@@ -61,11 +61,12 @@ namespace Vista
             this.btnGuardar.TabIndex = 3;
             this.btnGuardar.Text = "GUARDAR XML";
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnLeer
             // 
             this.btnLeer.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnLeer.Font = new System.Drawing.Font("Yu Gothic UI Semilight", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLeer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLeer.ForeColor = System.Drawing.SystemColors.InfoText;
             this.btnLeer.Location = new System.Drawing.Point(488, 214);
             this.btnLeer.Name = "btnLeer";
@@ -77,7 +78,7 @@ namespace Vista
             // btnDeposito
             // 
             this.btnDeposito.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnDeposito.Font = new System.Drawing.Font("Yu Gothic UI Semilight", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeposito.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeposito.ForeColor = System.Drawing.SystemColors.InfoText;
             this.btnDeposito.Location = new System.Drawing.Point(259, 116);
             this.btnDeposito.Name = "btnDeposito";
@@ -90,7 +91,7 @@ namespace Vista
             // btnFabricarSol
             // 
             this.btnFabricarSol.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnFabricarSol.Font = new System.Drawing.Font("Yu Gothic UI Semilight", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFabricarSol.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFabricarSol.ForeColor = System.Drawing.SystemColors.InfoText;
             this.btnFabricarSol.Location = new System.Drawing.Point(259, 12);
             this.btnFabricarSol.Name = "btnFabricarSol";
@@ -103,7 +104,7 @@ namespace Vista
             // btnFabricarGraduable
             // 
             this.btnFabricarGraduable.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnFabricarGraduable.Font = new System.Drawing.Font("Yu Gothic UI Semilight", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFabricarGraduable.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFabricarGraduable.ForeColor = System.Drawing.SystemColors.InfoText;
             this.btnFabricarGraduable.Location = new System.Drawing.Point(488, 12);
             this.btnFabricarGraduable.Name = "btnFabricarGraduable";
