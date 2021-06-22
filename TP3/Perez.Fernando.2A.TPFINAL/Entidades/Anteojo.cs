@@ -92,5 +92,28 @@ namespace Entidades
         }
 
         #endregion
+
+        #region Sobrecarga Operadores
+        /// <summary>
+        /// Retorna true en caso de que las dos producciones de anteojos tengan el mismo numero de serie.
+        /// </summary>
+        /// <param name="produccion1"></param>
+        /// <param name="produccion2"></param>
+        /// <returns></returns>
+        public static bool operator ==(Anteojo produccion1, Anteojo produccion2)
+        {
+            bool retorno = false;
+            if(produccion1.NUMERO_SERIE == produccion2.NUMERO_SERIE)
+            {
+                retorno = true;
+            }
+            return retorno;
+        }
+
+        public static bool operator !=(Anteojo produccion1, Anteojo produccion2)
+        {
+            return !(produccion1 == produccion2);
+        }
+        #endregion
     }
 }
