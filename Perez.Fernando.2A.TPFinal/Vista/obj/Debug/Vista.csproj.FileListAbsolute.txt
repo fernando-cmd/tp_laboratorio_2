@@ -1,0 +1,17 @@
+C:\Users\ferna\Desktop\tp_laboratorio_2\Perez.Fernando.2A.TPFinal\Vista\obj\Debug\Vista.csprojAssemblyReference.cache
+C:\Users\ferna\Desktop\tp_laboratorio_2\Perez.Fernando.2A.TPFinal\Vista\obj\Debug\Vista.Menu.resources
+C:\Users\ferna\Desktop\tp_laboratorio_2\Perez.Fernando.2A.TPFinal\Vista\obj\Debug\Vista.Properties.Resources.resources
+C:\Users\ferna\Desktop\tp_laboratorio_2\Perez.Fernando.2A.TPFinal\Vista\obj\Debug\Vista.csproj.GenerateResource.cache
+C:\Users\ferna\Desktop\tp_laboratorio_2\Perez.Fernando.2A.TPFinal\Vista\obj\Debug\Vista.csproj.CoreCompileInputs.cache
+C:\Users\ferna\Desktop\tp_laboratorio_2\Perez.Fernando.2A.TPFinal\Vista\bin\Debug\Vista.exe.config
+C:\Users\ferna\Desktop\tp_laboratorio_2\Perez.Fernando.2A.TPFinal\Vista\bin\Debug\Vista.exe
+C:\Users\ferna\Desktop\tp_laboratorio_2\Perez.Fernando.2A.TPFinal\Vista\bin\Debug\Vista.pdb
+C:\Users\ferna\Desktop\tp_laboratorio_2\Perez.Fernando.2A.TPFinal\Vista\obj\Debug\Vista.exe
+C:\Users\ferna\Desktop\tp_laboratorio_2\Perez.Fernando.2A.TPFinal\Vista\obj\Debug\Vista.pdb
+C:\Users\ferna\Desktop\tp_laboratorio_2\Perez.Fernando.2A.TPFinal\Vista\bin\Debug\Entidades.dll
+C:\Users\ferna\Desktop\tp_laboratorio_2\Perez.Fernando.2A.TPFinal\Vista\bin\Debug\Entidades.pdb
+C:\Users\ferna\Desktop\tp_laboratorio_2\Perez.Fernando.2A.TPFinal\Vista\obj\Debug\Vista.frmFabricarClasico.resources
+C:\Users\ferna\Desktop\tp_laboratorio_2\Perez.Fernando.2A.TPFinal\Vista\obj\Debug\Vista.csproj.CopyComplete
+C:\Users\ferna\Desktop\tp_laboratorio_2\Perez.Fernando.2A.TPFinal\Vista\obj\Debug\Vista.frmDeposito.resources
+C:\Users\ferna\Desktop\tp_laboratorio_2\Perez.Fernando.2A.TPFinal\Vista\obj\Debug\Vista.frmFabricarSol.resources
+C:\Users\ferna\Desktop\tp_laboratorio_2\Perez.Fernando.2A.TPFinal\Vista\obj\Debug\Vista.frmFabricarGraduable.resources
