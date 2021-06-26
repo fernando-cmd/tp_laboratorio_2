@@ -3,9 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Entidades
 {
+    [Serializable]
+    
+    [XmlInclude(typeof(Clasico))]
+    [XmlInclude(typeof(Sol))]
+    [XmlInclude(typeof(Graduables))]
+
     public abstract class Anteojo : IFabricable
     {
         protected int _cantidad;

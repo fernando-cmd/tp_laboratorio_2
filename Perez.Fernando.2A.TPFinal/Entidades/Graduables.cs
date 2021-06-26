@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Xml;
 namespace Entidades
 {
     [Serializable]
@@ -24,6 +24,10 @@ namespace Entidades
         #endregion
         
         #region Constructores
+        public Graduables()
+        {
+
+        }
         /// <summary>
         /// Constructor publico de un anteojo con graduacion.
         /// </summary>

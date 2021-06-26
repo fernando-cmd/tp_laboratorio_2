@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Xml;
 namespace Entidades
 {
+    [Serializable]
     public class Clasico : Anteojo
     {
         private bool _desmontable;
@@ -19,6 +20,11 @@ namespace Entidades
         #endregion
 
         #region Constructores
+        public Clasico()
+        {
+
+        }
+        
         /// <summary>
         /// Constructor publico de un anteojo Clasico y llama al constructor de la clase padre.
         /// </summary>

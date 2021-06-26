@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -85,8 +86,28 @@ namespace Vista
                 MessageBox.Show("No se han producido anteojos hasta el momento");
             }
         }
+
         #endregion
 
+        private void btnLeer_Click(object sender, EventArgs e)
+        {
+            if (File.Exists(deposito.DireccionXml))
+            {
+                DialogResult Confirmacion;
 
+                Confirmacion = MessageBox.Show("¿ Desea cargar los datos XML de los productos fabricados ? Se van a sobreescribir los datos actuales", "Acuerdo legal", MessageBoxButtons.OKCancel);
+
+                if (Confirmacion == DialogResult.OK)
+                {
+                    deposito = Archivos<Anteojo>.CargarFabrica(deposito);
+                    MessageBox.Show("Se cargaron los datos del XML", "Cargado correctamente");
+                }
+            }
+            else
+            {
+                MessageBox.Show("No existe el archivo para ser cargado, pruebe guardando por primera vez los datos", "Error al cargar el XML");
+            }
+
+        }
     }
 }

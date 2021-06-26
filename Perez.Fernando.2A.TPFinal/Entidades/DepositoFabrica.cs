@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Xml;
 namespace Entidades
 {
+    [Serializable]
     public class DepositoFabrica<T> where T : Anteojo
     {
         private List<T> _lista;

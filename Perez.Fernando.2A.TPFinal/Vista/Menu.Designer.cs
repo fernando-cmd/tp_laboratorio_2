@@ -74,6 +74,7 @@ namespace Vista
             this.btnLeer.TabIndex = 4;
             this.btnLeer.Text = "LEER XML";
             this.btnLeer.UseVisualStyleBackColor = false;
+            this.btnLeer.Click += new System.EventHandler(this.btnLeer_Click);
             // 
             // btnDeposito
             // 

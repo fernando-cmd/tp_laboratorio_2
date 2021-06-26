@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Xml;
 namespace Entidades
 {
+    [Serializable]
     public class Sol : Anteojo
     {
         private bool _polarizado;
@@ -18,6 +19,10 @@ namespace Entidades
         #endregion
 
         #region Contructores
+        public Sol()
+        {
+
+        }
         /// <summary>
         /// Constructor publico de un anteojo de sol y llama al constructor de la clase padre.
         /// </summary>
