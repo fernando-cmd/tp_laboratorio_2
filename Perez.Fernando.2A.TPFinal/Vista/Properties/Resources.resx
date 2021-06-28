@@ -121,4 +121,13 @@
   <data name="P3287" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\P3287.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="logo-lente-infinita_145155-7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo-lente-infinita_145155-7.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="7197592084cb5b63c6545cbfc209bdf8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\7197592084cb5b63c6545cbfc209bdf8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="salir" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\salir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

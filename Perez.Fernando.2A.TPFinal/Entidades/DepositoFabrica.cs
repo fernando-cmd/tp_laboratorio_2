@@ -69,10 +69,10 @@ namespace Entidades
             }
             return deposito;
         }
-        public void Agregar(T anteojos)
+        /*public void Agregar(T anteojos)
         {
             this.Lista.Add(anteojos);
-        }
+        }*/
 
         /// <summary>
         /// Sobrecarga del metodo ToString que devuelve todas las producciones que fueron almacenadas.

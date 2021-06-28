@@ -23,7 +23,7 @@ namespace Vista
 
         private void MostrarDeposito()
         {
-            richTextBox.Text = anteojos.ToString();
+            richTextBox.AppendText(anteojos.ToString());
         }
     }
 }

@@ -125,5 +125,14 @@
       <Name>Entidades</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7197592084cb5b63c6545cbfc209bdf8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo-lente-infinita_145155-7.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salir.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

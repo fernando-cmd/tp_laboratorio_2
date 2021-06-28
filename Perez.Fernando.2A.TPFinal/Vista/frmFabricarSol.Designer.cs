@@ -52,7 +52,7 @@ namespace Vista
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(351, 98);
+            this.btnSalir.Location = new System.Drawing.Point(307, 363);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(143, 35);
             this.btnSalir.TabIndex = 35;
@@ -61,7 +61,7 @@ namespace Vista
             // 
             // btnFabricar
             // 
-            this.btnFabricar.Location = new System.Drawing.Point(178, 98);
+            this.btnFabricar.Location = new System.Drawing.Point(116, 363);
             this.btnFabricar.Name = "btnFabricar";
             this.btnFabricar.Size = new System.Drawing.Size(143, 35);
             this.btnFabricar.TabIndex = 34;
@@ -72,7 +72,7 @@ namespace Vista
             // cmbBoxPolarizado
             // 
             this.cmbBoxPolarizado.FormattingEnabled = true;
-            this.cmbBoxPolarizado.Location = new System.Drawing.Point(718, 33);
+            this.cmbBoxPolarizado.Location = new System.Drawing.Point(116, 303);
             this.cmbBoxPolarizado.Name = "cmbBoxPolarizado";
             this.cmbBoxPolarizado.Size = new System.Drawing.Size(84, 21);
             this.cmbBoxPolarizado.TabIndex = 33;
@@ -80,7 +80,7 @@ namespace Vista
             // cmbBoxBlueRay
             // 
             this.cmbBoxBlueRay.FormattingEnabled = true;
-            this.cmbBoxBlueRay.Location = new System.Drawing.Point(601, 33);
+            this.cmbBoxBlueRay.Location = new System.Drawing.Point(116, 269);
             this.cmbBoxBlueRay.Name = "cmbBoxBlueRay";
             this.cmbBoxBlueRay.Size = new System.Drawing.Size(84, 21);
             this.cmbBoxBlueRay.TabIndex = 32;
@@ -88,7 +88,7 @@ namespace Vista
             // cmbBoxBiFocal
             // 
             this.cmbBoxBiFocal.FormattingEnabled = true;
-            this.cmbBoxBiFocal.Location = new System.Drawing.Point(501, 33);
+            this.cmbBoxBiFocal.Location = new System.Drawing.Point(116, 232);
             this.cmbBoxBiFocal.Name = "cmbBoxBiFocal";
             this.cmbBoxBiFocal.Size = new System.Drawing.Size(84, 21);
             this.cmbBoxBiFocal.TabIndex = 31;
@@ -96,15 +96,15 @@ namespace Vista
             // cmbBoxColor
             // 
             this.cmbBoxColor.FormattingEnabled = true;
-            this.cmbBoxColor.Location = new System.Drawing.Point(373, 33);
+            this.cmbBoxColor.Location = new System.Drawing.Point(116, 189);
             this.cmbBoxColor.Name = "cmbBoxColor";
-            this.cmbBoxColor.Size = new System.Drawing.Size(121, 21);
+            this.cmbBoxColor.Size = new System.Drawing.Size(84, 21);
             this.cmbBoxColor.TabIndex = 30;
             // 
             // cmbBoxArmazon
             // 
             this.cmbBoxArmazon.FormattingEnabled = true;
-            this.cmbBoxArmazon.Location = new System.Drawing.Point(268, 33);
+            this.cmbBoxArmazon.Location = new System.Drawing.Point(116, 144);
             this.cmbBoxArmazon.Name = "cmbBoxArmazon";
             this.cmbBoxArmazon.Size = new System.Drawing.Size(84, 21);
             this.cmbBoxArmazon.TabIndex = 29;
@@ -112,30 +112,30 @@ namespace Vista
             // cmbBoxLente
             // 
             this.cmbBoxLente.FormattingEnabled = true;
-            this.cmbBoxLente.Location = new System.Drawing.Point(178, 33);
+            this.cmbBoxLente.Location = new System.Drawing.Point(116, 103);
             this.cmbBoxLente.Name = "cmbBoxLente";
             this.cmbBoxLente.Size = new System.Drawing.Size(84, 21);
             this.cmbBoxLente.TabIndex = 28;
             // 
             // numericCantidad
             // 
-            this.numericCantidad.Location = new System.Drawing.Point(97, 33);
+            this.numericCantidad.Location = new System.Drawing.Point(116, 68);
             this.numericCantidad.Name = "numericCantidad";
-            this.numericCantidad.Size = new System.Drawing.Size(75, 20);
+            this.numericCantidad.Size = new System.Drawing.Size(84, 20);
             this.numericCantidad.TabIndex = 27;
             // 
             // textBoxSerie
             // 
-            this.textBoxSerie.Location = new System.Drawing.Point(12, 33);
+            this.textBoxSerie.Location = new System.Drawing.Point(116, 38);
             this.textBoxSerie.Name = "textBoxSerie";
-            this.textBoxSerie.Size = new System.Drawing.Size(65, 20);
+            this.textBoxSerie.Size = new System.Drawing.Size(84, 20);
             this.textBoxSerie.TabIndex = 26;
             // 
             // lblPolarizado
             // 
             this.lblPolarizado.AutoSize = true;
             this.lblPolarizado.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPolarizado.Location = new System.Drawing.Point(714, 9);
+            this.lblPolarizado.Location = new System.Drawing.Point(12, 303);
             this.lblPolarizado.Name = "lblPolarizado";
             this.lblPolarizado.Size = new System.Drawing.Size(98, 21);
             this.lblPolarizado.TabIndex = 25;
@@ -145,7 +145,7 @@ namespace Vista
             // 
             this.lblBlueRay.AutoSize = true;
             this.lblBlueRay.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBlueRay.Location = new System.Drawing.Point(607, 9);
+            this.lblBlueRay.Location = new System.Drawing.Point(12, 266);
             this.lblBlueRay.Name = "lblBlueRay";
             this.lblBlueRay.Size = new System.Drawing.Size(78, 21);
             this.lblBlueRay.TabIndex = 24;
@@ -155,7 +155,7 @@ namespace Vista
             // 
             this.lblBifocal.AutoSize = true;
             this.lblBifocal.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBifocal.Location = new System.Drawing.Point(513, 9);
+            this.lblBifocal.Location = new System.Drawing.Point(12, 229);
             this.lblBifocal.Name = "lblBifocal";
             this.lblBifocal.Size = new System.Drawing.Size(72, 21);
             this.lblBifocal.TabIndex = 23;
@@ -165,17 +165,17 @@ namespace Vista
             // 
             this.lblColor.AutoSize = true;
             this.lblColor.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblColor.Location = new System.Drawing.Point(369, 9);
+            this.lblColor.Location = new System.Drawing.Point(12, 186);
             this.lblColor.Name = "lblColor";
-            this.lblColor.Size = new System.Drawing.Size(125, 21);
+            this.lblColor.Size = new System.Drawing.Size(51, 21);
             this.lblColor.TabIndex = 22;
-            this.lblColor.Text = "Color Armazon";
+            this.lblColor.Text = "Color";
             // 
             // lblArmazon
             // 
             this.lblArmazon.AutoSize = true;
             this.lblArmazon.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblArmazon.Location = new System.Drawing.Point(271, 9);
+            this.lblArmazon.Location = new System.Drawing.Point(12, 141);
             this.lblArmazon.Name = "lblArmazon";
             this.lblArmazon.Size = new System.Drawing.Size(79, 21);
             this.lblArmazon.TabIndex = 21;
@@ -185,7 +185,7 @@ namespace Vista
             // 
             this.lblLente.AutoSize = true;
             this.lblLente.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLente.Location = new System.Drawing.Point(197, 9);
+            this.lblLente.Location = new System.Drawing.Point(12, 103);
             this.lblLente.Name = "lblLente";
             this.lblLente.Size = new System.Drawing.Size(52, 21);
             this.lblLente.TabIndex = 20;
@@ -195,7 +195,7 @@ namespace Vista
             // 
             this.lblSerie.AutoSize = true;
             this.lblSerie.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSerie.Location = new System.Drawing.Point(8, 9);
+            this.lblSerie.Location = new System.Drawing.Point(12, 37);
             this.lblSerie.Name = "lblSerie";
             this.lblSerie.Size = new System.Drawing.Size(72, 21);
             this.lblSerie.TabIndex = 19;
@@ -205,7 +205,7 @@ namespace Vista
             // 
             this.lblCantidad.AutoSize = true;
             this.lblCantidad.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCantidad.Location = new System.Drawing.Point(93, 9);
+            this.lblCantidad.Location = new System.Drawing.Point(12, 68);
             this.lblCantidad.Name = "lblCantidad";
             this.lblCantidad.Size = new System.Drawing.Size(79, 21);
             this.lblCantidad.TabIndex = 18;
@@ -215,7 +215,8 @@ namespace Vista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(829, 149);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.ClientSize = new System.Drawing.Size(616, 442);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnFabricar);
             this.Controls.Add(this.cmbBoxPolarizado);
@@ -234,6 +235,7 @@ namespace Vista
             this.Controls.Add(this.lblLente);
             this.Controls.Add(this.lblSerie);
             this.Controls.Add(this.lblCantidad);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmFabricarSol";
             this.Text = "frmFabricarSol";
             ((System.ComponentModel.ISupportInitialize)(this.numericCantidad)).EndInit();

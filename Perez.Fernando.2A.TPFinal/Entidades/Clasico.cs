@@ -50,7 +50,7 @@ namespace Entidades
         {
             StringBuilder sb = new StringBuilder();
             sb.Append(base.ToString());
-            sb.Append($"    {this.Desmontable}");
+            sb.AppendLine($"Desmontable? {this.Desmontable}");            
             return sb.ToString();
         }
 

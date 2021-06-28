@@ -52,8 +52,11 @@ namespace Vista
 
         private void btnFabricarSol_Click(object sender, EventArgs e)
         {
+
             frmFabricarSol frmSol = new frmFabricarSol();
 
+            //AbriFormPanel(new frmFabricarSol());
+            
             this.Hide();
             if(frmSol.ShowDialog() == DialogResult.OK)
             {
@@ -109,5 +112,25 @@ namespace Vista
             }
 
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void AbriFormPanel(object form)
+        {
+            if(this.panelContenedor.Controls.Count>0)
+            {
+                this.panelContenedor.Controls.RemoveAt(0);
+            }
+            Form fh = form as Form;
+            fh.TopLevel = false;
+            fh.Dock = DockStyle.Fill;
+            this.panelContenedor.Controls.Add(fh);
+            this.panelContenedor.Tag = fh;
+            fh.Hide();
+        }
+
     }
 }

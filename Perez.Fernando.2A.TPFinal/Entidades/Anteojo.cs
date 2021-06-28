@@ -91,11 +91,15 @@ namespace Entidades
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append($"  {this.NUMERO_SERIE}             {this.Cantidad}           {this.LENTE}       {this.ARMAZON}      {this.COLOR}    " +
-                $"      {this.BiFocal}          {this.BlueRay}      ");
-
+            sb.AppendLine("********************");
+            sb.AppendLine($"N° Serie: {this.NUMERO_SERIE}");
+            sb.AppendLine($"Cantidad: {this.Cantidad}");
+            sb.AppendLine($"Lente: {this.LENTE}");
+            sb.AppendLine($"Armazon: {this.ARMAZON}");
+            sb.AppendLine($"Color: {this.COLOR}");
+            sb.AppendLine($"BiFocal?: {this.BiFocal}");
+            sb.AppendLine($"BlueRay?: {this.BlueRay}");
             return sb.ToString();
-
         }
 
         #endregion

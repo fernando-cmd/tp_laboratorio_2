@@ -55,8 +55,9 @@ namespace Entidades
         {
             StringBuilder sb = new StringBuilder();
             sb.Append(base.ToString());
-            sb.Append($"    {this.OjoIzquierdo}     {this.OjoDerecho}");
-
+            sb.AppendLine($"Ojo izquierdo: {this.OjoIzquierdo}");
+            sb.AppendLine($"Ojo derecho: {this.OjoDerecho}");
+            sb.AppendLine("********************");
             return sb.ToString();
         }
         #endregion

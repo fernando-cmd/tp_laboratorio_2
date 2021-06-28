@@ -35,16 +35,33 @@ namespace Vista
             this.btnDeposito = new System.Windows.Forms.Button();
             this.btnFabricarSol = new System.Windows.Forms.Button();
             this.btnFabricarGraduable = new System.Windows.Forms.Button();
+            this.panelTitulo = new System.Windows.Forms.Panel();
+            this.panelMenuVertical = new System.Windows.Forms.Panel();
+            this.panelContenedor = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panelMenuVertical.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnFabricarClasico
             // 
-            this.btnFabricarClasico.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnFabricarClasico.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFabricarClasico.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.btnFabricarClasico.Location = new System.Drawing.Point(12, 12);
+            this.btnFabricarClasico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btnFabricarClasico.FlatAppearance.BorderSize = 0;
+            this.btnFabricarClasico.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnFabricarClasico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFabricarClasico.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFabricarClasico.ForeColor = System.Drawing.Color.White;
+            this.btnFabricarClasico.Location = new System.Drawing.Point(6, 129);
             this.btnFabricarClasico.Name = "btnFabricarClasico";
-            this.btnFabricarClasico.Size = new System.Drawing.Size(206, 68);
+            this.btnFabricarClasico.Size = new System.Drawing.Size(208, 58);
             this.btnFabricarClasico.TabIndex = 1;
             this.btnFabricarClasico.Text = "FABRICAR ANTEOJO CLASICO";
             this.btnFabricarClasico.UseVisualStyleBackColor = false;
@@ -52,12 +69,15 @@ namespace Vista
             // 
             // btnGuardar
             // 
-            this.btnGuardar.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.btnGuardar.Location = new System.Drawing.Point(12, 214);
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btnGuardar.FlatAppearance.BorderSize = 0;
+            this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.Color.White;
+            this.btnGuardar.Location = new System.Drawing.Point(8, 385);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(206, 68);
+            this.btnGuardar.Size = new System.Drawing.Size(208, 58);
             this.btnGuardar.TabIndex = 3;
             this.btnGuardar.Text = "GUARDAR XML";
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -65,12 +85,15 @@ namespace Vista
             // 
             // btnLeer
             // 
-            this.btnLeer.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnLeer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLeer.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.btnLeer.Location = new System.Drawing.Point(488, 214);
+            this.btnLeer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btnLeer.FlatAppearance.BorderSize = 0;
+            this.btnLeer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnLeer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLeer.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLeer.ForeColor = System.Drawing.Color.White;
+            this.btnLeer.Location = new System.Drawing.Point(12, 449);
             this.btnLeer.Name = "btnLeer";
-            this.btnLeer.Size = new System.Drawing.Size(206, 68);
+            this.btnLeer.Size = new System.Drawing.Size(208, 58);
             this.btnLeer.TabIndex = 4;
             this.btnLeer.Text = "LEER XML";
             this.btnLeer.UseVisualStyleBackColor = false;
@@ -78,12 +101,15 @@ namespace Vista
             // 
             // btnDeposito
             // 
-            this.btnDeposito.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnDeposito.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeposito.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.btnDeposito.Location = new System.Drawing.Point(259, 116);
+            this.btnDeposito.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btnDeposito.FlatAppearance.BorderSize = 0;
+            this.btnDeposito.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnDeposito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeposito.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeposito.ForeColor = System.Drawing.Color.White;
+            this.btnDeposito.Location = new System.Drawing.Point(8, 321);
             this.btnDeposito.Name = "btnDeposito";
-            this.btnDeposito.Size = new System.Drawing.Size(206, 68);
+            this.btnDeposito.Size = new System.Drawing.Size(208, 58);
             this.btnDeposito.TabIndex = 5;
             this.btnDeposito.Text = "DEPOSITO";
             this.btnDeposito.UseVisualStyleBackColor = false;
@@ -91,12 +117,15 @@ namespace Vista
             // 
             // btnFabricarSol
             // 
-            this.btnFabricarSol.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnFabricarSol.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFabricarSol.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.btnFabricarSol.Location = new System.Drawing.Point(259, 12);
+            this.btnFabricarSol.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btnFabricarSol.FlatAppearance.BorderSize = 0;
+            this.btnFabricarSol.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnFabricarSol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFabricarSol.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFabricarSol.ForeColor = System.Drawing.Color.White;
+            this.btnFabricarSol.Location = new System.Drawing.Point(8, 193);
             this.btnFabricarSol.Name = "btnFabricarSol";
-            this.btnFabricarSol.Size = new System.Drawing.Size(206, 68);
+            this.btnFabricarSol.Size = new System.Drawing.Size(208, 58);
             this.btnFabricarSol.TabIndex = 6;
             this.btnFabricarSol.Text = "FABRICAR ANTEOJO SOL";
             this.btnFabricarSol.UseVisualStyleBackColor = false;
@@ -104,35 +133,148 @@ namespace Vista
             // 
             // btnFabricarGraduable
             // 
-            this.btnFabricarGraduable.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnFabricarGraduable.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFabricarGraduable.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.btnFabricarGraduable.Location = new System.Drawing.Point(488, 12);
+            this.btnFabricarGraduable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btnFabricarGraduable.FlatAppearance.BorderSize = 0;
+            this.btnFabricarGraduable.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnFabricarGraduable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFabricarGraduable.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFabricarGraduable.ForeColor = System.Drawing.Color.White;
+            this.btnFabricarGraduable.Location = new System.Drawing.Point(8, 257);
             this.btnFabricarGraduable.Name = "btnFabricarGraduable";
-            this.btnFabricarGraduable.Size = new System.Drawing.Size(206, 68);
+            this.btnFabricarGraduable.Size = new System.Drawing.Size(208, 58);
             this.btnFabricarGraduable.TabIndex = 7;
             this.btnFabricarGraduable.Text = "FABRICAR ANTEOJO GRADUABLE";
             this.btnFabricarGraduable.UseVisualStyleBackColor = false;
             this.btnFabricarGraduable.Click += new System.EventHandler(this.btnFabricarGraduable_Click);
+            // 
+            // panelTitulo
+            // 
+            this.panelTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panelTitulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTitulo.Location = new System.Drawing.Point(0, 0);
+            this.panelTitulo.Name = "panelTitulo";
+            this.panelTitulo.Size = new System.Drawing.Size(1300, 35);
+            this.panelTitulo.TabIndex = 8;
+            // 
+            // panelMenuVertical
+            // 
+            this.panelMenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.panelMenuVertical.Controls.Add(this.pictureBox2);
+            this.panelMenuVertical.Controls.Add(this.panel6);
+            this.panelMenuVertical.Controls.Add(this.btnLeer);
+            this.panelMenuVertical.Controls.Add(this.panel5);
+            this.panelMenuVertical.Controls.Add(this.panel4);
+            this.panelMenuVertical.Controls.Add(this.btnGuardar);
+            this.panelMenuVertical.Controls.Add(this.panel3);
+            this.panelMenuVertical.Controls.Add(this.btnDeposito);
+            this.panelMenuVertical.Controls.Add(this.panel2);
+            this.panelMenuVertical.Controls.Add(this.btnFabricarGraduable);
+            this.panelMenuVertical.Controls.Add(this.panel1);
+            this.panelMenuVertical.Controls.Add(this.btnFabricarSol);
+            this.panelMenuVertical.Controls.Add(this.pictureBox1);
+            this.panelMenuVertical.Controls.Add(this.btnFabricarClasico);
+            this.panelMenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelMenuVertical.Location = new System.Drawing.Point(0, 35);
+            this.panelMenuVertical.Name = "panelMenuVertical";
+            this.panelMenuVertical.Size = new System.Drawing.Size(220, 615);
+            this.panelMenuVertical.TabIndex = 9;
+            // 
+            // panelContenedor
+            // 
+            this.panelContenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContenedor.Location = new System.Drawing.Point(220, 35);
+            this.panelContenedor.Name = "panelContenedor";
+            this.panelContenedor.Size = new System.Drawing.Size(1080, 615);
+            this.panelContenedor.TabIndex = 10;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel1.Location = new System.Drawing.Point(3, 129);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(5, 58);
+            this.panel1.TabIndex = 2;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel2.Location = new System.Drawing.Point(3, 193);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(5, 58);
+            this.panel2.TabIndex = 7;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel3.Location = new System.Drawing.Point(3, 257);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(5, 58);
+            this.panel3.TabIndex = 8;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel4.Location = new System.Drawing.Point(3, 321);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(5, 58);
+            this.panel4.TabIndex = 9;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel5.Location = new System.Drawing.Point(3, 385);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(5, 58);
+            this.panel5.TabIndex = 10;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel6.Location = new System.Drawing.Point(3, 449);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(5, 58);
+            this.panel6.TabIndex = 11;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Vista.Properties.Resources.salir;
+            this.pictureBox2.Location = new System.Drawing.Point(3, 563);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(60, 49);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 12;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Vista.Properties.Resources.logo_lente_infinita_145155_7;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(206, 120);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(706, 294);
-            this.Controls.Add(this.btnFabricarGraduable);
-            this.Controls.Add(this.btnFabricarSol);
-            this.Controls.Add(this.btnDeposito);
-            this.Controls.Add(this.btnLeer);
-            this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.btnFabricarClasico);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.ClientSize = new System.Drawing.Size(1300, 650);
+            this.Controls.Add(this.panelContenedor);
+            this.Controls.Add(this.panelMenuVertical);
+            this.Controls.Add(this.panelTitulo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
+            this.panelMenuVertical.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -145,5 +287,16 @@ namespace Vista
         private System.Windows.Forms.Button btnDeposito;
         private System.Windows.Forms.Button btnFabricarSol;
         private System.Windows.Forms.Button btnFabricarGraduable;
+        private System.Windows.Forms.Panel panelTitulo;
+        private System.Windows.Forms.Panel panelMenuVertical;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panelContenedor;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
