@@ -27,19 +27,26 @@ namespace Vista
         #region Eventos
         private void btnFabricarClasico_Click(object sender, EventArgs e)
         {
-            frmFabricarClasico frmClasico = new frmFabricarClasico();            
-
+            frmFabricarClasico frmClasico = new frmFabricarClasico();
             this.Hide();
             if (frmClasico.ShowDialog() == DialogResult.OK)
-            {                
-                this.deposito += (Anteojo)frmClasico.Anteojo;
+            {
+                try
+                {
+                    this.deposito += (Anteojo)frmClasico.Anteojo;
+                    MessageBox.Show("Fabricacion exitosa!");
+                }
+                catch (ProduccionRepetidaException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
             this.Show();
         }
 
         private void btnDeposito_Click(object sender, EventArgs e)
         {
-            if(deposito.Lista.Count > 0)
+            if (deposito.Lista.Count > 0)
             {
                 frmDeposito frmDeposito = new frmDeposito(deposito);
                 frmDeposito.Show();
@@ -55,12 +62,18 @@ namespace Vista
 
             frmFabricarSol frmSol = new frmFabricarSol();
 
-            //AbriFormPanel(new frmFabricarSol());
-            
             this.Hide();
-            if(frmSol.ShowDialog() == DialogResult.OK)
+            if (frmSol.ShowDialog() == DialogResult.OK)
             {
-                this.deposito += (Anteojo)frmSol.Anteojo;
+                try
+                {
+                    this.deposito += (Anteojo)frmSol.Anteojo;
+                    MessageBox.Show("Fabricacion exitosa!");
+                }
+                catch(ProduccionRepetidaException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
             this.Show();
         }
@@ -70,16 +83,24 @@ namespace Vista
             frmFabricarGraduable frmGraduable = new frmFabricarGraduable();
 
             this.Hide();
-            if(frmGraduable.ShowDialog() == DialogResult.OK)
+            if (frmGraduable.ShowDialog() == DialogResult.OK)
             {
-                this.deposito += (Anteojo)frmGraduable.Anteojo;
+                try
+                {
+                    this.deposito += (Anteojo)frmGraduable.Anteojo;
+                    MessageBox.Show("Fabricacion exitosa!");
+                }
+                catch (ProduccionRepetidaException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
             this.Show();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if(this.deposito.Lista.Count > 0)
+            if (this.deposito.Lista.Count > 0)
             {
                 Archivos<Anteojo>.GuardarFabrica(this.deposito);
                 MessageBox.Show("Se guardaron los datos correctamente");
@@ -98,7 +119,7 @@ namespace Vista
             {
                 DialogResult Confirmacion;
 
-                Confirmacion = MessageBox.Show("¿ Desea cargar los datos XML de los productos fabricados ? Se van a sobreescribir los datos actuales", "Acuerdo legal", MessageBoxButtons.OKCancel);
+                Confirmacion = MessageBox.Show("Si carga los datos XML de los anteojos fabricados, se sobreescribiran los datos actuales", "AVISO", MessageBoxButtons.OKCancel);
 
                 if (Confirmacion == DialogResult.OK)
                 {
@@ -108,7 +129,7 @@ namespace Vista
             }
             else
             {
-                MessageBox.Show("No existe el archivo para ser cargado, pruebe guardando por primera vez los datos", "Error al cargar el XML");
+                MessageBox.Show("No existe el archivo", "Error al cargar el XML");
             }
 
         }
@@ -118,9 +139,9 @@ namespace Vista
             Application.Exit();
         }
 
-        private void AbriFormPanel(object form)
+        private void AbrirFormPanel(object form)
         {
-            if(this.panelContenedor.Controls.Count>0)
+            if (this.panelContenedor.Controls.Count > 0)
             {
                 this.panelContenedor.Controls.RemoveAt(0);
             }
@@ -129,8 +150,16 @@ namespace Vista
             fh.Dock = DockStyle.Fill;
             this.panelContenedor.Controls.Add(fh);
             this.panelContenedor.Tag = fh;
-            fh.Hide();
+
+
+            fh.Show();
         }
 
+        /*private void horafecha_Tick(object sender, EventArgs e)
+        {
+            lblHora.Text = DateTime.Now.ToLongTimeString();
+            lblFecha.Text = DateTime.Now.ToLongDateString();
+
+        }*/
     }
 }

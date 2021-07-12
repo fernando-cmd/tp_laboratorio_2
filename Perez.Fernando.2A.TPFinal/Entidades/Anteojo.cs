@@ -103,5 +103,29 @@ namespace Entidades
         }
 
         #endregion
+
+        #region Sobrecargas
+        /// <summary>
+        /// Dos fabricaciones de anteojos seran iguales
+        /// si tienen el mismo numero de serie;
+        /// </summary>
+        /// <param name="a1"></param>
+        /// <param name="a2"></param>
+        /// <returns></returns>
+        public static bool operator ==(Anteojo a1, Anteojo a2)
+        {
+            bool retorno = false;
+            if(a1.NUMERO_SERIE == a2.NUMERO_SERIE)
+            {
+                retorno = true;
+            }
+            return retorno;
+        }
+
+        public static bool operator !=(Anteojo a1, Anteojo a2)
+        {
+            return !(a1 == a2);
+        }
+        #endregion
     }
 }

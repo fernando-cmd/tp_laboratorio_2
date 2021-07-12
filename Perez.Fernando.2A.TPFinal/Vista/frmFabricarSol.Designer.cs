@@ -58,6 +58,7 @@ namespace Vista
             this.btnSalir.TabIndex = 35;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnFabricar
             // 

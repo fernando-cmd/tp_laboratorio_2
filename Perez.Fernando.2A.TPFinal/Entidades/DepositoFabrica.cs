@@ -58,14 +58,24 @@ namespace Entidades
         /// <param name="anteojos"></param>
         /// <returns></returns>
         public static DepositoFabrica<T> operator +(DepositoFabrica<T> deposito, T anteojos)
-        {
-            try
+        {          
+            if(deposito.Lista.Count > 0)
+            {
+                foreach (T item in deposito.Lista)
+                {
+                    if ((Anteojo)item == (Anteojo)anteojos)
+                    {
+                        throw new ProduccionRepetidaException();
+                    }
+                    else
+                    {
+                        deposito.Lista.Add(anteojos);
+                    }
+                }
+            }
+            else
             {
                 deposito.Lista.Add(anteojos);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
             }
             return deposito;
         }

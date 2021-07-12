@@ -54,8 +54,10 @@ namespace Vista
         #region Eventos
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            //this.Close();
-            this.DialogResult = DialogResult.Cancel;
+            DialogResult Confirmacion;
+
+            Confirmacion = MessageBox.Show("¿Estás seguro de que quieres salir?", "Aviso", MessageBoxButtons.OKCancel);
+            this.Close();
         }
 
         private void btnFabricar_Click(object sender, EventArgs e)
@@ -107,7 +109,7 @@ namespace Vista
 
                 this.anteojo = new Clasico(desmontable, cantidad, NUMERO_SERIE, ARMAZON, LENTE, COLOR, biFocal, blueRay);
                 this.DialogResult = DialogResult.OK;
-                //MessageBox.Show(this.anteojo.ToString());
+                MessageBox.Show("Procesando....");                
             }
             catch
             {

@@ -100,12 +100,20 @@ namespace Vista
 
                 this.anteojo = new Sol(polarizado, cantidad, NUMERO_SERIE, ARMAZON, LENTE, COLOR, biFocal, blueRay);
                 this.DialogResult = DialogResult.OK;
-                MessageBox.Show("Fabricacion exitosa");
+                MessageBox.Show("Procesando....");
             }
             catch
             {
                 MessageBox.Show("Ingrese todos los campos");
             }
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            DialogResult Confirmacion;
+
+            Confirmacion = MessageBox.Show("¿Estás seguro de que quieres salir?", "Aviso", MessageBoxButtons.OKCancel);
+            this.Close();
         }
     }
 }
