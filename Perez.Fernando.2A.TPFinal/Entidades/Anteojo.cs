@@ -53,6 +53,11 @@ namespace Entidades
         /// </summary>
         public int Cantidad { get => this._cantidad; set => this._cantidad = value; }
 
+        public string Tipo
+        {
+            get { return this.GetType().Name; }
+        }
+
         #endregion
 
         #region Constructores

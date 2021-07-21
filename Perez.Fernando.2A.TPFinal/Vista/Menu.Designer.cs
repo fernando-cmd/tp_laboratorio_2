@@ -47,13 +47,25 @@ namespace Vista
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
-            this.lblHora = new System.Windows.Forms.Label();
+            this.dtable = new System.Windows.Forms.DataGridView();
             this.lblFecha = new System.Windows.Forms.Label();
+            this.lblHora = new System.Windows.Forms.Label();
             this.horafecha = new System.Windows.Forms.Timer(this.components);
+            this.btnCargarBD = new System.Windows.Forms.Button();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.btnGuardarBD = new System.Windows.Forms.Button();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.panel11 = new System.Windows.Forms.Panel();
             this.panelMenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelContenedor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtable)).BeginInit();
+            this.panel8.SuspendLayout();
+            this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnFabricarClasico
@@ -164,6 +176,10 @@ namespace Vista
             // panelMenuVertical
             // 
             this.panelMenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.panelMenuVertical.Controls.Add(this.panel10);
+            this.panelMenuVertical.Controls.Add(this.btnGuardarBD);
+            this.panelMenuVertical.Controls.Add(this.panel8);
+            this.panelMenuVertical.Controls.Add(this.btnCargarBD);
             this.panelMenuVertical.Controls.Add(this.pictureBox2);
             this.panelMenuVertical.Controls.Add(this.panel6);
             this.panelMenuVertical.Controls.Add(this.btnLeer);
@@ -181,13 +197,13 @@ namespace Vista
             this.panelMenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenuVertical.Location = new System.Drawing.Point(0, 35);
             this.panelMenuVertical.Name = "panelMenuVertical";
-            this.panelMenuVertical.Size = new System.Drawing.Size(220, 615);
+            this.panelMenuVertical.Size = new System.Drawing.Size(220, 699);
             this.panelMenuVertical.TabIndex = 9;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Vista.Properties.Resources.salir;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 563);
+            this.pictureBox2.Location = new System.Drawing.Point(3, 641);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(60, 49);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -198,6 +214,7 @@ namespace Vista
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel6.Controls.Add(this.panel7);
             this.panel6.Location = new System.Drawing.Point(3, 449);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(5, 58);
@@ -256,22 +273,23 @@ namespace Vista
             // panelContenedor
             // 
             this.panelContenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.panelContenedor.Controls.Add(this.dtable);
             this.panelContenedor.Controls.Add(this.lblFecha);
             this.panelContenedor.Controls.Add(this.lblHora);
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenedor.Location = new System.Drawing.Point(220, 35);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(1080, 615);
+            this.panelContenedor.Size = new System.Drawing.Size(1080, 699);
             this.panelContenedor.TabIndex = 10;
             // 
-            // lblHora
+            // dtable
             // 
-            this.lblHora.AutoSize = true;
-            this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 80F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHora.Location = new System.Drawing.Point(359, 193);
-            this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(0, 120);
-            this.lblHora.TabIndex = 0;
+            this.dtable.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.dtable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtable.Location = new System.Drawing.Point(85, 29);
+            this.dtable.Name = "dtable";
+            this.dtable.Size = new System.Drawing.Size(864, 402);
+            this.dtable.TabIndex = 2;
             // 
             // lblFecha
             // 
@@ -282,17 +300,99 @@ namespace Vista
             this.lblFecha.Size = new System.Drawing.Size(0, 69);
             this.lblFecha.TabIndex = 1;
             // 
+            // lblHora
+            // 
+            this.lblHora.AutoSize = true;
+            this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 80F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHora.Location = new System.Drawing.Point(359, 193);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.Size = new System.Drawing.Size(0, 120);
+            this.lblHora.TabIndex = 0;
+            // 
             // horafecha
             // 
             this.horafecha.Enabled = true;
-            //this.horafecha.Tick += new System.EventHandler(this.horafecha_Tick);
+            // 
+            // btnCargarBD
+            // 
+            this.btnCargarBD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btnCargarBD.FlatAppearance.BorderSize = 0;
+            this.btnCargarBD.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnCargarBD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCargarBD.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCargarBD.ForeColor = System.Drawing.Color.White;
+            this.btnCargarBD.Location = new System.Drawing.Point(9, 513);
+            this.btnCargarBD.Name = "btnCargarBD";
+            this.btnCargarBD.Size = new System.Drawing.Size(208, 58);
+            this.btnCargarBD.TabIndex = 13;
+            this.btnCargarBD.Text = "CARGAR BD";
+            this.btnCargarBD.UseVisualStyleBackColor = false;
+            this.btnCargarBD.Click += new System.EventHandler(this.btnCargarBD_Click);
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel7.Location = new System.Drawing.Point(0, 64);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(5, 58);
+            this.panel7.TabIndex = 12;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel8.Controls.Add(this.panel9);
+            this.panel8.Location = new System.Drawing.Point(3, 513);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(5, 58);
+            this.panel8.TabIndex = 13;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel9.Location = new System.Drawing.Point(0, 64);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(5, 58);
+            this.panel9.TabIndex = 12;
+            // 
+            // btnGuardarBD
+            // 
+            this.btnGuardarBD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btnGuardarBD.FlatAppearance.BorderSize = 0;
+            this.btnGuardarBD.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnGuardarBD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarBD.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarBD.ForeColor = System.Drawing.Color.White;
+            this.btnGuardarBD.Location = new System.Drawing.Point(6, 577);
+            this.btnGuardarBD.Name = "btnGuardarBD";
+            this.btnGuardarBD.Size = new System.Drawing.Size(208, 58);
+            this.btnGuardarBD.TabIndex = 14;
+            this.btnGuardarBD.Text = "GUARDAR BD";
+            this.btnGuardarBD.UseVisualStyleBackColor = false;
+            this.btnGuardarBD.Click += new System.EventHandler(this.btnGuardarBD_Click);
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel10.Controls.Add(this.panel11);
+            this.panel10.Location = new System.Drawing.Point(3, 577);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(5, 58);
+            this.panel10.TabIndex = 15;
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel11.Location = new System.Drawing.Point(0, 64);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(5, 58);
+            this.panel11.TabIndex = 12;
             // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1300, 650);
+            this.ClientSize = new System.Drawing.Size(1300, 734);
             this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.panelMenuVertical);
             this.Controls.Add(this.panelTitulo);
@@ -304,9 +404,13 @@ namespace Vista
             this.Text = "Menu";
             this.panelMenuVertical.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelContenedor.ResumeLayout(false);
             this.panelContenedor.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtable)).EndInit();
+            this.panel8.ResumeLayout(false);
+            this.panel10.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -333,5 +437,13 @@ namespace Vista
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.Timer horafecha;
+        private System.Windows.Forms.DataGridView dtable;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Button btnGuardarBD;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Button btnCargarBD;
+        private System.Windows.Forms.Panel panel7;
     }
 }
