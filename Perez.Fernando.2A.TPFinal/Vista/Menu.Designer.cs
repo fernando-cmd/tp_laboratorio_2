@@ -38,8 +38,15 @@ namespace Vista
             this.btnFabricarGraduable = new System.Windows.Forms.Button();
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.panelMenuVertical = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.btnGuardarBD = new System.Windows.Forms.Button();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.btnCargarBD = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -51,21 +58,20 @@ namespace Vista
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblHora = new System.Windows.Forms.Label();
             this.horafecha = new System.Windows.Forms.Timer(this.components);
-            this.btnCargarBD = new System.Windows.Forms.Button();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.btnGuardarBD = new System.Windows.Forms.Button();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.panel11 = new System.Windows.Forms.Panel();
+            this.pictureBoxAnteojos1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxAnteojo2 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxAnteojos3 = new System.Windows.Forms.PictureBox();
             this.panelMenuVertical.SuspendLayout();
+            this.panel10.SuspendLayout();
+            this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelContenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtable)).BeginInit();
-            this.panel8.SuspendLayout();
-            this.panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAnteojos1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAnteojo2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAnteojos3)).BeginInit();
             this.SuspendLayout();
             // 
             // btnFabricarClasico
@@ -200,6 +206,72 @@ namespace Vista
             this.panelMenuVertical.Size = new System.Drawing.Size(220, 699);
             this.panelMenuVertical.TabIndex = 9;
             // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel10.Controls.Add(this.panel11);
+            this.panel10.Location = new System.Drawing.Point(3, 577);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(5, 58);
+            this.panel10.TabIndex = 15;
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel11.Location = new System.Drawing.Point(0, 64);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(5, 58);
+            this.panel11.TabIndex = 12;
+            // 
+            // btnGuardarBD
+            // 
+            this.btnGuardarBD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btnGuardarBD.FlatAppearance.BorderSize = 0;
+            this.btnGuardarBD.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnGuardarBD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarBD.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarBD.ForeColor = System.Drawing.Color.White;
+            this.btnGuardarBD.Location = new System.Drawing.Point(6, 577);
+            this.btnGuardarBD.Name = "btnGuardarBD";
+            this.btnGuardarBD.Size = new System.Drawing.Size(208, 58);
+            this.btnGuardarBD.TabIndex = 14;
+            this.btnGuardarBD.Text = "GUARDAR BD";
+            this.btnGuardarBD.UseVisualStyleBackColor = false;
+            this.btnGuardarBD.Click += new System.EventHandler(this.btnGuardarBD_Click);
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel8.Controls.Add(this.panel9);
+            this.panel8.Location = new System.Drawing.Point(3, 513);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(5, 58);
+            this.panel8.TabIndex = 13;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel9.Location = new System.Drawing.Point(0, 64);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(5, 58);
+            this.panel9.TabIndex = 12;
+            // 
+            // btnCargarBD
+            // 
+            this.btnCargarBD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btnCargarBD.FlatAppearance.BorderSize = 0;
+            this.btnCargarBD.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnCargarBD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCargarBD.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCargarBD.ForeColor = System.Drawing.Color.White;
+            this.btnCargarBD.Location = new System.Drawing.Point(9, 513);
+            this.btnCargarBD.Name = "btnCargarBD";
+            this.btnCargarBD.Size = new System.Drawing.Size(208, 58);
+            this.btnCargarBD.TabIndex = 13;
+            this.btnCargarBD.Text = "CARGAR BD";
+            this.btnCargarBD.UseVisualStyleBackColor = false;
+            this.btnCargarBD.Click += new System.EventHandler(this.btnCargarBD_Click);
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Vista.Properties.Resources.salir;
@@ -219,6 +291,14 @@ namespace Vista
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(5, 58);
             this.panel6.TabIndex = 11;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel7.Location = new System.Drawing.Point(0, 64);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(5, 58);
+            this.panel7.TabIndex = 12;
             // 
             // panel5
             // 
@@ -273,6 +353,9 @@ namespace Vista
             // panelContenedor
             // 
             this.panelContenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.panelContenedor.Controls.Add(this.pictureBoxAnteojos3);
+            this.panelContenedor.Controls.Add(this.pictureBoxAnteojo2);
+            this.panelContenedor.Controls.Add(this.pictureBoxAnteojos1);
             this.panelContenedor.Controls.Add(this.dtable);
             this.panelContenedor.Controls.Add(this.lblFecha);
             this.panelContenedor.Controls.Add(this.lblHora);
@@ -286,9 +369,9 @@ namespace Vista
             // 
             this.dtable.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.dtable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtable.Location = new System.Drawing.Point(85, 29);
+            this.dtable.Location = new System.Drawing.Point(6, 6);
             this.dtable.Name = "dtable";
-            this.dtable.Size = new System.Drawing.Size(864, 402);
+            this.dtable.Size = new System.Drawing.Size(1071, 501);
             this.dtable.TabIndex = 2;
             // 
             // lblFecha
@@ -313,79 +396,29 @@ namespace Vista
             // 
             this.horafecha.Enabled = true;
             // 
-            // btnCargarBD
+            // pictureBoxAnteojos1
             // 
-            this.btnCargarBD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.btnCargarBD.FlatAppearance.BorderSize = 0;
-            this.btnCargarBD.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.btnCargarBD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCargarBD.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCargarBD.ForeColor = System.Drawing.Color.White;
-            this.btnCargarBD.Location = new System.Drawing.Point(9, 513);
-            this.btnCargarBD.Name = "btnCargarBD";
-            this.btnCargarBD.Size = new System.Drawing.Size(208, 58);
-            this.btnCargarBD.TabIndex = 13;
-            this.btnCargarBD.Text = "CARGAR BD";
-            this.btnCargarBD.UseVisualStyleBackColor = false;
-            this.btnCargarBD.Click += new System.EventHandler(this.btnCargarBD_Click);
+            this.pictureBoxAnteojos1.Location = new System.Drawing.Point(23, 516);
+            this.pictureBoxAnteojos1.Name = "pictureBoxAnteojos1";
+            this.pictureBoxAnteojos1.Size = new System.Drawing.Size(148, 55);
+            this.pictureBoxAnteojos1.TabIndex = 3;
+            this.pictureBoxAnteojos1.TabStop = false;
             // 
-            // panel7
+            // pictureBoxAnteojo2
             // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel7.Location = new System.Drawing.Point(0, 64);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(5, 58);
-            this.panel7.TabIndex = 12;
+            this.pictureBoxAnteojo2.Location = new System.Drawing.Point(211, 516);
+            this.pictureBoxAnteojo2.Name = "pictureBoxAnteojo2";
+            this.pictureBoxAnteojo2.Size = new System.Drawing.Size(148, 55);
+            this.pictureBoxAnteojo2.TabIndex = 4;
+            this.pictureBoxAnteojo2.TabStop = false;
             // 
-            // panel8
+            // pictureBoxAnteojos3
             // 
-            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel8.Controls.Add(this.panel9);
-            this.panel8.Location = new System.Drawing.Point(3, 513);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(5, 58);
-            this.panel8.TabIndex = 13;
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel9.Location = new System.Drawing.Point(0, 64);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(5, 58);
-            this.panel9.TabIndex = 12;
-            // 
-            // btnGuardarBD
-            // 
-            this.btnGuardarBD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.btnGuardarBD.FlatAppearance.BorderSize = 0;
-            this.btnGuardarBD.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.btnGuardarBD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardarBD.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarBD.ForeColor = System.Drawing.Color.White;
-            this.btnGuardarBD.Location = new System.Drawing.Point(6, 577);
-            this.btnGuardarBD.Name = "btnGuardarBD";
-            this.btnGuardarBD.Size = new System.Drawing.Size(208, 58);
-            this.btnGuardarBD.TabIndex = 14;
-            this.btnGuardarBD.Text = "GUARDAR BD";
-            this.btnGuardarBD.UseVisualStyleBackColor = false;
-            this.btnGuardarBD.Click += new System.EventHandler(this.btnGuardarBD_Click);
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel10.Controls.Add(this.panel11);
-            this.panel10.Location = new System.Drawing.Point(3, 577);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(5, 58);
-            this.panel10.TabIndex = 15;
-            // 
-            // panel11
-            // 
-            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel11.Location = new System.Drawing.Point(0, 64);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(5, 58);
-            this.panel11.TabIndex = 12;
+            this.pictureBoxAnteojos3.Location = new System.Drawing.Point(414, 516);
+            this.pictureBoxAnteojos3.Name = "pictureBoxAnteojos3";
+            this.pictureBoxAnteojos3.Size = new System.Drawing.Size(148, 55);
+            this.pictureBoxAnteojos3.TabIndex = 5;
+            this.pictureBoxAnteojos3.TabStop = false;
             // 
             // Menu
             // 
@@ -403,14 +436,17 @@ namespace Vista
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.panelMenuVertical.ResumeLayout(false);
+            this.panel10.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelContenedor.ResumeLayout(false);
             this.panelContenedor.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtable)).EndInit();
-            this.panel8.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAnteojos1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAnteojo2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAnteojos3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -445,5 +481,8 @@ namespace Vista
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Button btnCargarBD;
         private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.PictureBox pictureBoxAnteojos1;
+        private System.Windows.Forms.PictureBox pictureBoxAnteojos3;
+        private System.Windows.Forms.PictureBox pictureBoxAnteojo2;
     }
 }

@@ -10,9 +10,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
 using System.Data.SqlClient;
+using System.Threading;
 
 namespace Vista
 {
+    public delegate void Delegado(PictureBox pB, string path);
     public partial class Menu : Form
     {
         #region Propiedades
@@ -20,6 +22,9 @@ namespace Vista
         private SqlConnection conexion;        
         private SqlDataAdapter da;
         private DataTable dt;
+
+        private Thread hiloAnteojos;        
+        public event Delegado eventoImagen;
         #endregion
 
         #region Constructor
@@ -31,7 +36,16 @@ namespace Vista
 
             this.conexion = new SqlConnection(@"Data Source = DESKTOP-ILTUKAA\SQLEXPRESS; Initial Catalog = PerezFernandoTP4; Integrated Security = True");
             this.Configurardtable();
-            this.Configurardadapter();
+            this.eventoImagen += this.MostrarImagen;
+            //this.Configurardadapter();
+            this.hiloAnteojos = new Thread(this.EjecutarPerifericos); //Se asocia la dirección de memoria del método al hilo
+
+            
+
+            if (!this.hiloAnteojos.IsAlive) //Verifica que el hilo esté muerto
+            {
+                this.hiloAnteojos.Start(); //Inicia el hilo de perifericos
+            }
 
             this.dtable.DataSource = this.dt;
         }
@@ -260,7 +274,7 @@ namespace Vista
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }        
+        }
 
         /*private void horafecha_Tick(object sender, EventArgs e)
         {
@@ -274,6 +288,10 @@ namespace Vista
         protected bool _bifocal;
         protected bool _blueRay;
         }*/
+        private void MostrarImagen(PictureBox pB, string path)
+        {
+            pB.ImageLocation = AppDomain.CurrentDomain.BaseDirectory + $@"\img\{path}";
+        }
 
         private void Configurardtable()
         {
@@ -285,13 +303,26 @@ namespace Vista
             this.dt.Columns.Add("Armazon", typeof(EArmazon));
             this.dt.Columns.Add("Lente", typeof(ELente));
             this.dt.Columns.Add("Color", typeof(EColor));
-            this.dt.Columns.Add("BiFocal", typeof(bool));
-            this.dt.Columns.Add("BlueRay", typeof(bool));
-            this.dt.Columns.Add("Polarizado", typeof(bool));
-            this.dt.Columns.Add("Desmontable", typeof(bool));
+            this.dt.Columns.Add("BiFocal", typeof(string));
+            this.dt.Columns.Add("BlueRay", typeof(string));
+            this.dt.Columns.Add("Polarizado", typeof(string));
+            this.dt.Columns.Add("Desmontable", typeof(string));
             this.dt.Columns.Add("GraduacionOI", typeof(float));
             this.dt.Columns.Add("GraduacionOD", typeof(float));
 
+            this.dt.Columns[0].ReadOnly = true;
+            this.dt.Columns[1].ReadOnly = true;
+            this.dt.Columns[2].ReadOnly = true;
+            this.dt.Columns[3].ReadOnly = true;
+            this.dt.Columns[4].ReadOnly = true;
+            this.dt.Columns[5].ReadOnly = true;
+            this.dt.Columns[6].ReadOnly = true;
+            this.dt.Columns[7].ReadOnly = true;
+            this.dt.Columns[8].ReadOnly = true;
+            this.dt.Columns[9].ReadOnly = true;
+            this.dt.Columns[10].ReadOnly = true;
+            this.dt.Columns[11].ReadOnly = true;
+            
             this.dtable.AllowUserToAddRows = false;
             //NroSerie como primary key
             this.dt.PrimaryKey = new DataColumn[] { this.dt.Columns[1] };
@@ -307,8 +338,8 @@ namespace Vista
             fila[3] = anteojo.ARMAZON;
             fila[4] = anteojo.LENTE;
             fila[5] = anteojo.COLOR;
-            fila[6] = anteojo.BiFocal;
-            fila[7] = anteojo.BlueRay;
+            fila[6] = anteojo.BiFocal.ToString();
+            fila[7] = anteojo.BlueRay.ToString();
 
             switch(anteojo.Tipo)
             {
@@ -376,6 +407,20 @@ namespace Vista
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void EjecutarPerifericos()
+        {
+            do
+            {
+                this.eventoImagen.Invoke(this.pictureBoxAnteojos1, "mouse.png");  //Invoca al evento
+                Thread.Sleep(2500);
+                this.eventoImagen.Invoke(this.pictureBoxAnteojo2, "teclado.png");
+                Thread.Sleep(2500);
+                this.eventoImagen.Invoke(this.pictureBoxAnteojos3, "auricular.png");
+                Thread.Sleep(2500);
+
+            } while (true);
         }
         #endregion
 
