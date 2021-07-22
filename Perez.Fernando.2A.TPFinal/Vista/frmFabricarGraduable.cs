@@ -54,25 +54,25 @@ namespace Vista
         {
             try
             {
-                double oI = 0;
-                double oD = 0;
+                float oI = 0;
+                float oD = 0;
                 bool biFocal = false;
                 bool blueRay = false;
                 bool desmontable = false;
                 int NUMERO_SERIE = 0;
                 int cantidad = 0;
-                if(double.Parse(textBoxOjoDerecho.Text)>0)
+                if(float.Parse(textBoxOjoDerecho.Text)>0)
                 {
-                    oD = double.Parse(textBoxOjoDerecho.Text);
+                    oD = float.Parse(textBoxOjoDerecho.Text);
                 }
                 else
                 {
                     MessageBox.Show("El numero debe ser mayor a 0");
                 }
 
-                if (double.Parse(textBoxOjoIzquierdo.Text) > 0)
+                if (float.Parse(textBoxOjoIzquierdo.Text) > 0)
                 {
-                    oI = double.Parse(textBoxOjoIzquierdo.Text);
+                    oI = float.Parse(textBoxOjoIzquierdo.Text);
                 }
                 else
                 {

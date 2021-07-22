@@ -58,20 +58,10 @@ namespace Entidades
         /// <param name="anteojos"></param>
         /// <returns></returns>
         public static DepositoFabrica<T> operator +(DepositoFabrica<T> deposito, T anteojos)
-        {          
-            if(deposito.Lista.Count > 0)
+        {
+            if (deposito == anteojos)
             {
-                foreach (T item in deposito.Lista)
-                {
-                    if ((Anteojo)item == (Anteojo)anteojos)
-                    {
-                        throw new ProduccionRepetidaException();
-                    }
-                    else
-                    {
-                        deposito.Lista.Add(anteojos);
-                    }
-                }
+                throw new ProduccionRepetidaException();
             }
             else
             {
@@ -79,11 +69,32 @@ namespace Entidades
             }
             return deposito;
         }
-        /*public void Agregar(T anteojos)
-        {
-            this.Lista.Add(anteojos);
-        }*/
 
+        public static bool operator ==(DepositoFabrica<T> deposito, T anteojos)
+        {
+            bool retorno = false;
+            if(deposito.Lista.Count>0)
+            {
+                foreach(T item in deposito.Lista)
+                {
+                    if(item.NUMERO_SERIE == anteojos.NUMERO_SERIE)
+                    {
+                        retorno = true;
+                        break;
+                    }
+                }
+            }
+            return retorno;
+        }
+
+        public static bool operator !=(DepositoFabrica<T> deposito, T anteojos)
+        {
+            return !(deposito == anteojos);
+        }
+
+        #endregion
+
+        #region Metodos
         /// <summary>
         /// Sobrecarga del metodo ToString que devuelve todas las producciones que fueron almacenadas.
         /// </summary>
@@ -106,8 +117,6 @@ namespace Entidades
 
             return sb.ToString();
         }
-
-
-        #endregion
+        #endregion 
     }
 }

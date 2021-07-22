@@ -15,10 +15,13 @@ namespace Vista
 {
     public partial class Menu : Form
     {
+        #region Propiedades
         protected DepositoFabrica<Anteojo> deposito;
         private SqlConnection conexion;        
         private SqlDataAdapter da;
         private DataTable dt;
+        #endregion
+
         #region Constructor
         public Menu()
         {
@@ -26,7 +29,7 @@ namespace Vista
             this.deposito = new DepositoFabrica<Anteojo>("Fabrica");
             this.deposito.DireccionXml = AppDomain.CurrentDomain.BaseDirectory + "AnteojosProducidos.xml";
 
-            this.conexion = new SqlConnection(@"Data Source = DESKTOP-ILTUKAA\SQLEXPRESS; Initial Catalog = dbTP4; Integrated Security = True");
+            this.conexion = new SqlConnection(@"Data Source = DESKTOP-ILTUKAA\SQLEXPRESS; Initial Catalog = PerezFernandoTP4; Integrated Security = True");
             this.Configurardtable();
             this.Configurardadapter();
 
@@ -34,7 +37,7 @@ namespace Vista
         }
         #endregion
 
-        #region Eventos
+        #region Botones
         private void btnFabricarClasico_Click(object sender, EventArgs e)
         {
             frmFabricarClasico frmClasico = new frmFabricarClasico();
@@ -45,6 +48,7 @@ namespace Vista
                 {
                     this.deposito += (Anteojo)frmClasico.Anteojo;
                     MessageBox.Show("Fabricacion exitosa!");
+                    this.AgregarADataT((Anteojo)frmClasico.Anteojo);
                 }
                 catch (ProduccionRepetidaException ex)
                 {
@@ -79,6 +83,7 @@ namespace Vista
                 {
                     this.deposito += (Anteojo)frmSol.Anteojo;
                     MessageBox.Show("Fabricacion exitosa!");
+                    this.AgregarADataT((Anteojo)frmSol.Anteojo);
                 }
                 catch(ProduccionRepetidaException ex)
                 {
@@ -99,6 +104,7 @@ namespace Vista
                 {
                     this.deposito += (Anteojo)frmGraduable.Anteojo;
                     MessageBox.Show("Fabricacion exitosa!");
+                    this.AgregarADataT((Anteojo)frmGraduable.Anteojo);
                 }
                 catch (ProduccionRepetidaException ex)
                 {
@@ -121,7 +127,69 @@ namespace Vista
             }
         }
 
-        #endregion
+        private void btnCargarBD_Click(object sender, EventArgs e)
+        {
+            //bool aux;            
+
+            DialogResult confirmacion = MessageBox.Show("Si carga los datos de los anteojos fabricados, se sobreescribiran los datos actuales", "AVISO", MessageBoxButtons.OKCancel);
+
+            if (confirmacion == DialogResult.OK) //Si acepta continua
+            {
+                try
+                {
+                    this.deposito.Lista.Clear(); //Borra la lista de la fábrica
+                    this.dt.Clear(); //Borra el listado del DataTable
+
+                    this.da.Fill(this.dt); //Obtiene el listado de la base de datos
+
+                    //Agrega el listado de DataTable al listado de la fábrica según el tipo de periférico
+                    foreach (DataRow fila in this.dt.Rows)
+                    {
+                        try
+                        {
+                            if (fila.RowState != DataRowState.Deleted) //Verifica que la fila no esté marcada como eliminada
+                            {
+                                if (fila[0].ToString() == "Clasico")
+                                {
+
+                                    Clasico anteojo = new Clasico(bool.Parse(fila[9].ToString()), (int)fila[1], (int)fila[2], (EArmazon)fila[3], (ELente)fila[4], (EColor)fila[5], bool.Parse(fila[6].ToString()), bool.Parse(fila[7].ToString()));
+
+
+                                    this.deposito.Lista.Add(anteojo);
+                                }
+                                else
+                                {
+                                    if (fila[0].ToString() == "Sol")
+                                    {
+                                        //(bool polarizado, int cantidad, int serie, EArmazon armazon, ELente lente, EColor color, bool biFocal, bool blueRay)
+                                        Sol anteojo = new Sol(bool.Parse(fila[8].ToString()), (int)fila[1], (int)fila[2], (EArmazon)fila[3], (ELente)fila[4], (EColor)fila[5], bool.Parse(fila[6].ToString()), bool.Parse(fila[7].ToString()));
+
+                                        this.deposito.Lista.Add(anteojo);
+                                    }
+                                    else
+                                    {
+                                        ///(double ojoIzquierdo, double ojoDerecho, bool desmontable, int cantidad, int serie, EArmazon armazon, ELente lente, EColor color, bool biFocal, bool blueRay)
+                                        Graduables anteojo = new Graduables((float)fila[9], (float)fila[10], bool.Parse(fila[11].ToString()), (int)fila[1], (int)fila[2], (EArmazon)fila[3], (ELente)fila[4], (EColor)fila[5], bool.Parse(fila[6].ToString()), bool.Parse(fila[7].ToString()));
+
+
+
+                                        this.deposito.Lista.Add(anteojo);
+                                    }
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
 
         private void btnLeer_Click(object sender, EventArgs e)
         {
@@ -135,7 +203,7 @@ namespace Vista
                 {
                     this.deposito = Archivos<Anteojo>.CargarFabrica(deposito);
                     this.dt.Rows.Clear();
-                    foreach(Anteojo item in this.deposito.Lista)
+                    foreach (Anteojo item in this.deposito.Lista)
                     {
                         this.AgregarADataT(item);
                     }
@@ -149,26 +217,50 @@ namespace Vista
 
         }
 
+        private void btnGuardarBD_Click(object sender, EventArgs e)
+        {
+            SqlCommand agregar = new SqlCommand("INSERT INTO Table_Anteojos (Tipo, NroSerie, Cantidad, Armazon, Lente, Color) "/*, BiFocal, BlueRay, Polarizado, Desmontable, GraduacionOI, GraduacionOD) */ +
+                                                            "VALUES (@tipo, @nroSerie, @cantidad, @armazon, @lente, @color)", this.conexion);/*, @biFocal, @blueRay, @polarizado, @desmontable, @graduacionOI, @graduacionOD)", this.conexion);*/
+            this.conexion.Open();
+            try
+            {
+                foreach(DataGridViewRow row in dtable.Rows)
+                {
+                    agregar.Parameters.Clear();
+                    agregar.Parameters.AddWithValue("@tipo", Convert.ToString(row.Cells[0].Value));
+                    agregar.Parameters.AddWithValue("@nroSerie", Convert.ToInt32(row.Cells[1].Value));
+                    agregar.Parameters.AddWithValue("@cantidad", Convert.ToInt32(row.Cells[2].Value));
+                    agregar.Parameters.AddWithValue("@armazon", row.Cells[3].Value);
+                    agregar.Parameters.AddWithValue("@lente", Convert.ToString(row.Cells[4].Value));
+                    agregar.Parameters.AddWithValue("@color", Convert.ToString(row.Cells[5].Value));
+                    /*agregar.Parameters.AddWithValue("@biFocal", Convert.ToBoolean(row.Cells[6].Value));
+                    agregar.Parameters.AddWithValue("@blueRay", Convert.ToBoolean(row.Cells[7].Value));
+                    agregar.Parameters.AddWithValue("@polarizado", Convert.ToBoolean(row.Cells[8].Value));
+                    agregar.Parameters.AddWithValue("@desmontable", Convert.ToBoolean(row.Cells[9].Value));
+                    agregar.Parameters.AddWithValue("@graduacionOI", Convert.ToDouble((row.Cells[10].Value)));
+                    agregar.Parameters.AddWithValue("@graduacionOD", Convert.ToDouble((row.Cells[11].Value)));*/
+                    agregar.ExecuteNonQuery();
+                }
+                MessageBox.Show("Datos Agregados");                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                this.conexion.Close();
+            }
+            finally
+            {
+                this.conexion.Close();
+            }
+        }
+        #endregion
+
+        #region Metodos
+
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void AbrirFormPanel(object form)
-        {
-            if (this.panelContenedor.Controls.Count > 0)
-            {
-                this.panelContenedor.Controls.RemoveAt(0);
-            }
-            Form fh = form as Form;
-            fh.TopLevel = false;
-            fh.Dock = DockStyle.Fill;
-            this.panelContenedor.Controls.Add(fh);
-            this.panelContenedor.Tag = fh;
-
-
-            fh.Show();
-        }
+        }        
 
         /*private void horafecha_Tick(object sender, EventArgs e)
         {
@@ -200,7 +292,7 @@ namespace Vista
             this.dt.Columns.Add("GraduacionOI", typeof(float));
             this.dt.Columns.Add("GraduacionOD", typeof(float));
 
-
+            this.dtable.AllowUserToAddRows = false;
             //NroSerie como primary key
             this.dt.PrimaryKey = new DataColumn[] { this.dt.Columns[1] };
         }
@@ -244,8 +336,8 @@ namespace Vista
                 this.da = new SqlDataAdapter();
                 this.conexion.Open();
                 this.da.SelectCommand = new SqlCommand($"SELECT * FROM tablaAnteojos", this.conexion);
-                this.da.InsertCommand = new SqlCommand($"INSERT INTO tablaAnteojos (tipo, nroSerie, cantidad, armazon, lente, color, biFocal, blueRay, polarizado, desmontable, graduacionOI, graduacionOD)" +
-                                                            $" VALUES (@tipo, @nroSerie, @cantidad, @armazon, @lente, @color, @biFocal, @blueRay, @polarizado, @desmontable, @graduacionOI, @graduacionOD)", this.conexion);
+                this.da.InsertCommand = new SqlCommand($"INSERT INTO tablaAnteojos (tipo, nroSerie, cantidad, armazon, lente, color, biFocal, blueRay, polarizado, desmontable, graduacionOI, graduacionOD) " +
+                                                            $"VALUES (@tipo, @nroSerie, @cantidad, @armazon, @lente, @color, @biFocal, @blueRay, @polarizado, @desmontable, @graduacionOI, @graduacionOD)", this.conexion);
                 this.da.UpdateCommand = new SqlCommand($"UPDATE tablaAnteojos SET tipo=@tipo, nroSerie=@nroSerie, cantidad=@cantidad, armazon=@armazon, lente=@lente, color=@color, biFocal=@biFocal, blueRay=@blueRay, Polarizado=@Polarizado, graduacionOI=@graduacionOI, graduacionOD=@graduacionOD, desmontable=@desmontable" +
                                                             " WHERE nroSerie=@nroSerie", this.conexion);
                 this.da.DeleteCommand = new SqlCommand($"DELETE FROM tablaAnteojos WHERE nroSerie=@nroSerie", this.conexion);
@@ -285,89 +377,7 @@ namespace Vista
                 MessageBox.Show(ex.Message);
             }
         }
+        #endregion
 
-        private void btnGuardarBD_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.conexion.Open();
-                if(this.conexion.State == ConnectionState.Open)
-                {
-                    MessageBox.Show("conectado");
-                }
-                this.da.Update(this.dt);
-                MessageBox.Show("ok");
-                this.conexion.Close();
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                this.conexion.Close();
-            }
-        }
-
-        private void btnCargarBD_Click(object sender, EventArgs e)
-        {
-            //bool aux;            
-
-            DialogResult confirmacion = MessageBox.Show("Si carga los datos de los anteojos fabricados, se sobreescribiran los datos actuales", "AVISO", MessageBoxButtons.OKCancel);
-
-            if (confirmacion == DialogResult.OK) //Si acepta continua
-            {
-                try
-                {
-                    this.deposito.Lista.Clear(); //Borra la lista de la fábrica
-                    this.dt.Clear(); //Borra el listado del DataTable
-
-                    this.da.Fill(this.dt); //Obtiene el listado de la base de datos
-
-                    //Agrega el listado de DataTable al listado de la fábrica según el tipo de periférico
-                    foreach (DataRow fila in this.dt.Rows)
-                    {
-                        try
-                        {
-                            if (fila.RowState != DataRowState.Deleted) //Verifica que la fila no esté marcada como eliminada
-                            {
-                                if (fila[0].ToString() == "Clasico")
-                                {
-                                    
-                                    Clasico anteojo = new Clasico(bool.Parse(fila[9].ToString()), (int)fila[1], (int)fila[2], (EArmazon)fila[3], (ELente)fila[4], (EColor)fila[5], bool.Parse(fila[6].ToString()), bool.Parse(fila[7].ToString()));
-
-
-                                    this.deposito.Lista.Add(anteojo);
-                                }
-                                else
-                                {
-                                    if (fila[0].ToString() == "Sol")
-                                    {
-                                        //(bool polarizado, int cantidad, int serie, EArmazon armazon, ELente lente, EColor color, bool biFocal, bool blueRay)
-                                        Sol anteojo = new Sol(bool.Parse(fila[8].ToString()), (int)fila[1], (int)fila[2], (EArmazon)fila[3], (ELente)fila[4], (EColor)fila[5], bool.Parse(fila[6].ToString()), bool.Parse(fila[7].ToString()));
-
-                                        this.deposito.Lista.Add(anteojo);
-                                    }
-                                    else
-                                    {
-                                        ///(double ojoIzquierdo, double ojoDerecho, bool desmontable, int cantidad, int serie, EArmazon armazon, ELente lente, EColor color, bool biFocal, bool blueRay)
-                                        Graduables anteojo = new Graduables((double)fila[9],(double)fila[10], bool.Parse(fila[11].ToString()), (int)fila[1], (int)fila[2], (EArmazon)fila[3], (ELente)fila[4], (EColor)fila[5], bool.Parse(fila[6].ToString()), bool.Parse(fila[7].ToString()));
-
-
-
-                                        this.deposito.Lista.Add(anteojo);
-                                    }
-                                }
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message);
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-        }
     }
 }

@@ -9,18 +9,18 @@ namespace Entidades
     [Serializable]
     public class Graduables : Clasico
     {
-        private double _ojoIzquierdo;
-        private double _ojoDerecho;
+        private float _ojoIzquierdo;
+        private float _ojoDerecho;
 
         #region Propiedades
         /// <summary>
         /// Retorna y asigna la graduacion del ojo izquierdo.
         /// </summary>
-        public double OjoIzquierdo { get { return this._ojoIzquierdo; } set { this._ojoIzquierdo = value; } }
+        public float OjoIzquierdo { get { return this._ojoIzquierdo; } set { this._ojoIzquierdo = value; } }
         /// <summary>
         /// Retorna y asigna la graduacion del ojo derecho.
         /// </summary>
-        public double OjoDerecho { get { return this._ojoDerecho; } set { this._ojoDerecho = value; } }
+        public float OjoDerecho { get { return this._ojoDerecho; } set { this._ojoDerecho = value; } }
         #endregion
         
         #region Constructores
@@ -41,7 +41,7 @@ namespace Entidades
         /// <param name="color"></param>
         /// <param name="biFocal"></param>
         /// <param name="blueRay"></param>
-        public Graduables(double ojoIzquierdo, double ojoDerecho, bool desmontable, int cantidad, int serie, EArmazon armazon, ELente lente, EColor color, bool biFocal, bool blueRay)
+        public Graduables(float ojoIzquierdo, float ojoDerecho, bool desmontable, int cantidad, int serie, EArmazon armazon, ELente lente, EColor color, bool biFocal, bool blueRay)
             : base(desmontable, cantidad, serie, armazon, lente, color, biFocal, blueRay)
         {
             this.OjoIzquierdo = ojoIzquierdo;
