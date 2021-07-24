@@ -19,11 +19,11 @@ namespace Vista
     {
         #region Propiedades
         protected DepositoFabrica<Anteojo> deposito;
-        private SqlConnection conexion;        
+        private SqlConnection conexion;
         private SqlDataAdapter da;
         private DataTable dt;
 
-        private Thread hiloAnteojos;        
+        private Thread hiloAnteojos;
         public event Delegado eventoImagen;
         #endregion
 
@@ -40,7 +40,7 @@ namespace Vista
             //this.Configurardadapter();
             this.hiloAnteojos = new Thread(this.EjecutarPerifericos); //Se asocia la dirección de memoria del método al hilo
 
-            
+
 
             if (!this.hiloAnteojos.IsAlive) //Verifica que el hilo esté muerto
             {
@@ -99,7 +99,7 @@ namespace Vista
                     MessageBox.Show("Fabricacion exitosa!");
                     this.AgregarADataT((Anteojo)frmSol.Anteojo);
                 }
-                catch(ProduccionRepetidaException ex)
+                catch (ProduccionRepetidaException ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
@@ -238,29 +238,32 @@ namespace Vista
             this.conexion.Open();
             try
             {
-                foreach(DataGridViewRow row in dtable.Rows)
+                foreach (DataGridViewRow row in dtable.Rows)
                 {
-                    agregar.Parameters.Clear();
-                    agregar.Parameters.AddWithValue("@tipo", Convert.ToString(row.Cells[0].Value));
-                    agregar.Parameters.AddWithValue("@nroSerie", Convert.ToInt32(row.Cells[1].Value));
-                    agregar.Parameters.AddWithValue("@cantidad", Convert.ToInt32(row.Cells[2].Value));
-                    agregar.Parameters.AddWithValue("@armazon", row.Cells[3].Value);
-                    agregar.Parameters.AddWithValue("@lente", Convert.ToString(row.Cells[4].Value));
-                    agregar.Parameters.AddWithValue("@color", Convert.ToString(row.Cells[5].Value));
-                    /*agregar.Parameters.AddWithValue("@biFocal", Convert.ToBoolean(row.Cells[6].Value));
-                    agregar.Parameters.AddWithValue("@blueRay", Convert.ToBoolean(row.Cells[7].Value));
-                    agregar.Parameters.AddWithValue("@polarizado", Convert.ToBoolean(row.Cells[8].Value));
-                    agregar.Parameters.AddWithValue("@desmontable", Convert.ToBoolean(row.Cells[9].Value));
-                    agregar.Parameters.AddWithValue("@graduacionOI", Convert.ToDouble((row.Cells[10].Value)));
-                    agregar.Parameters.AddWithValue("@graduacionOD", Convert.ToDouble((row.Cells[11].Value)));*/
+                    if (Convert.ToString(row.Cells[0].Value) == "Graduables")
+                    {
+                        agregar.Parameters.Clear();
+                        agregar.Parameters.AddWithValue("@tipo", Convert.ToString(row.Cells[0].Value));
+                        agregar.Parameters.AddWithValue("@nroSerie", Convert.ToInt32(row.Cells[1].Value));
+                        agregar.Parameters.AddWithValue("@cantidad", Convert.ToInt32(row.Cells[2].Value));
+                        agregar.Parameters.AddWithValue("@armazon", Convert.ToString);
+                        agregar.Parameters.AddWithValue("@lente", Convert.ToString(row.Cells[4].Value));
+                        agregar.Parameters.AddWithValue("@color", Convert.ToString(row.Cells[5].Value));
+                        agregar.Parameters.AddWithValue("@biFocal", Convert.ToByte(row.Cells[6].Value));                       
+                        agregar.Parameters.AddWithValue("@blueRay", Convert.ToBoolean(row.Cells[7].Value));
+                        agregar.Parameters.AddWithValue("@desmontable", Convert.ToBoolean(row.Cells[9].Value));
+                        agregar.Parameters.AddWithValue("@graduacionOI", Convert.ToDouble((row.Cells[10].Value)));
+                        agregar.Parameters.AddWithValue("@graduacionOD", Convert.ToDouble((row.Cells[11].Value)));
+                    }
+                    //agregar.Parameters.AddWithValue("@polarizado", Convert.ToBoolean(row.Cells[8].Value));
+
                     agregar.ExecuteNonQuery();
                 }
-                MessageBox.Show("Datos Agregados");                
+                MessageBox.Show("Datos Agregados");
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                this.conexion.Close();
             }
             finally
             {
@@ -273,7 +276,16 @@ namespace Vista
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+
+            DialogResult Confirmacion;
+
+            Confirmacion = MessageBox.Show("¿Estás seguro de que quieres salir?", "Aviso", MessageBoxButtons.OKCancel);
+
+            if (this.hiloAnteojos.IsAlive) //Verifica que el hilo de perifericos esté vivo 
+            {
+                this.hiloAnteojos.Abort(); //Lo aborta
+            }
+            this.Close();
         }
 
         /*private void horafecha_Tick(object sender, EventArgs e)
@@ -290,7 +302,7 @@ namespace Vista
         }*/
         private void MostrarImagen(PictureBox pB, string path)
         {
-            pB.ImageLocation = AppDomain.CurrentDomain.BaseDirectory + $@"\img\{path}";
+            pB.ImageLocation = AppDomain.CurrentDomain.BaseDirectory + $@"{path}";
         }
 
         private void Configurardtable()
@@ -322,7 +334,7 @@ namespace Vista
             this.dt.Columns[9].ReadOnly = true;
             this.dt.Columns[10].ReadOnly = true;
             this.dt.Columns[11].ReadOnly = true;
-            
+
             this.dtable.AllowUserToAddRows = false;
             //NroSerie como primary key
             this.dt.PrimaryKey = new DataColumn[] { this.dt.Columns[1] };
@@ -341,7 +353,7 @@ namespace Vista
             fila[6] = anteojo.BiFocal.ToString();
             fila[7] = anteojo.BlueRay.ToString();
 
-            switch(anteojo.Tipo)
+            switch (anteojo.Tipo)
             {
                 case "Clasico":
                     fila[9] = ((Clasico)anteojo).Desmontable.ToString();
@@ -350,12 +362,13 @@ namespace Vista
                     fila[8] = ((Sol)anteojo).Polarizado.ToString();
                     break;
                 case "Graduables":
+                    fila[9] = ((Clasico)anteojo).Desmontable.ToString();
                     fila[10] = ((Graduables)anteojo).OjoIzquierdo;
                     fila[11] = ((Graduables)anteojo).OjoDerecho;
                     break;
             }
-            
-            
+
+
 
             this.dt.Rows.Add(fila); //Lo agrega
         }
@@ -378,7 +391,7 @@ namespace Vista
                 this.da.InsertCommand.Parameters.Add("@cantidad", SqlDbType.Int, 10, "cantidad");
                 this.da.InsertCommand.Parameters.Add("@armazon", SqlDbType.Int, 10, "armazon");
                 this.da.InsertCommand.Parameters.Add("@lente", SqlDbType.Int, 10, "lente");
-                this.da.InsertCommand.Parameters.Add("@color", SqlDbType.Int, 10, "color");                
+                this.da.InsertCommand.Parameters.Add("@color", SqlDbType.Int, 10, "color");
                 this.da.InsertCommand.Parameters.Add("@biFocal", SqlDbType.Bit, 10, "biFocal");
                 this.da.InsertCommand.Parameters.Add("@blueRay", SqlDbType.Bit, 10, "blueRay");
                 this.da.InsertCommand.Parameters.Add("@polarizado", SqlDbType.Bit, 10, "polarizado");
@@ -399,7 +412,7 @@ namespace Vista
                 this.da.UpdateCommand.Parameters.Add("@graduacionOD", SqlDbType.Float, 10, "graduacionOD");
                 this.da.UpdateCommand.Parameters.Add("@desmontable", SqlDbType.Bit, 10, "desmontable");
 
-                
+
                 this.da.DeleteCommand.Parameters.Add("@nroSerie", SqlDbType.Int, 10, "nroSerie");
                 this.conexion.Close();
             }
@@ -413,11 +426,11 @@ namespace Vista
         {
             do
             {
-                this.eventoImagen.Invoke(this.pictureBoxAnteojos1, "mouse.png");  //Invoca al evento
+                this.eventoImagen.Invoke(this.pictureBoxAnteojos1, "anteojo1.png");  //Invoca al evento
                 Thread.Sleep(2500);
-                this.eventoImagen.Invoke(this.pictureBoxAnteojo2, "teclado.png");
+                this.eventoImagen.Invoke(this.pictureBoxAnteojos1, "anteojo2.png");
                 Thread.Sleep(2500);
-                this.eventoImagen.Invoke(this.pictureBoxAnteojos3, "auricular.png");
+                this.eventoImagen.Invoke(this.pictureBoxAnteojos1, "anteojo3.png");
                 Thread.Sleep(2500);
 
             } while (true);

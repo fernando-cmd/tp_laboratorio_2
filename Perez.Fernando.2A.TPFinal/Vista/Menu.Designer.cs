@@ -54,13 +54,11 @@ namespace Vista
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
+            this.pictureBoxAnteojos1 = new System.Windows.Forms.PictureBox();
             this.dtable = new System.Windows.Forms.DataGridView();
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblHora = new System.Windows.Forms.Label();
             this.horafecha = new System.Windows.Forms.Timer(this.components);
-            this.pictureBoxAnteojos1 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxAnteojo2 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxAnteojos3 = new System.Windows.Forms.PictureBox();
             this.panelMenuVertical.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -68,10 +66,8 @@ namespace Vista
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelContenedor.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAnteojos1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAnteojo2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAnteojos3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtable)).BeginInit();
             this.SuspendLayout();
             // 
             // btnFabricarClasico
@@ -353,8 +349,6 @@ namespace Vista
             // panelContenedor
             // 
             this.panelContenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.panelContenedor.Controls.Add(this.pictureBoxAnteojos3);
-            this.panelContenedor.Controls.Add(this.pictureBoxAnteojo2);
             this.panelContenedor.Controls.Add(this.pictureBoxAnteojos1);
             this.panelContenedor.Controls.Add(this.dtable);
             this.panelContenedor.Controls.Add(this.lblFecha);
@@ -364,6 +358,15 @@ namespace Vista
             this.panelContenedor.Name = "panelContenedor";
             this.panelContenedor.Size = new System.Drawing.Size(1080, 699);
             this.panelContenedor.TabIndex = 10;
+            // 
+            // pictureBoxAnteojos1
+            // 
+            this.pictureBoxAnteojos1.Location = new System.Drawing.Point(23, 516);
+            this.pictureBoxAnteojos1.Name = "pictureBoxAnteojos1";
+            this.pictureBoxAnteojos1.Size = new System.Drawing.Size(148, 55);
+            this.pictureBoxAnteojos1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxAnteojos1.TabIndex = 3;
+            this.pictureBoxAnteojos1.TabStop = false;
             // 
             // dtable
             // 
@@ -396,30 +399,6 @@ namespace Vista
             // 
             this.horafecha.Enabled = true;
             // 
-            // pictureBoxAnteojos1
-            // 
-            this.pictureBoxAnteojos1.Location = new System.Drawing.Point(23, 516);
-            this.pictureBoxAnteojos1.Name = "pictureBoxAnteojos1";
-            this.pictureBoxAnteojos1.Size = new System.Drawing.Size(148, 55);
-            this.pictureBoxAnteojos1.TabIndex = 3;
-            this.pictureBoxAnteojos1.TabStop = false;
-            // 
-            // pictureBoxAnteojo2
-            // 
-            this.pictureBoxAnteojo2.Location = new System.Drawing.Point(211, 516);
-            this.pictureBoxAnteojo2.Name = "pictureBoxAnteojo2";
-            this.pictureBoxAnteojo2.Size = new System.Drawing.Size(148, 55);
-            this.pictureBoxAnteojo2.TabIndex = 4;
-            this.pictureBoxAnteojo2.TabStop = false;
-            // 
-            // pictureBoxAnteojos3
-            // 
-            this.pictureBoxAnteojos3.Location = new System.Drawing.Point(414, 516);
-            this.pictureBoxAnteojos3.Name = "pictureBoxAnteojos3";
-            this.pictureBoxAnteojos3.Size = new System.Drawing.Size(148, 55);
-            this.pictureBoxAnteojos3.TabIndex = 5;
-            this.pictureBoxAnteojos3.TabStop = false;
-            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -443,10 +422,8 @@ namespace Vista
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelContenedor.ResumeLayout(false);
             this.panelContenedor.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtable)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAnteojos1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAnteojo2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAnteojos3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtable)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -482,7 +459,5 @@ namespace Vista
         private System.Windows.Forms.Button btnCargarBD;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.PictureBox pictureBoxAnteojos1;
-        private System.Windows.Forms.PictureBox pictureBoxAnteojos3;
-        private System.Windows.Forms.PictureBox pictureBoxAnteojo2;
     }
 }
