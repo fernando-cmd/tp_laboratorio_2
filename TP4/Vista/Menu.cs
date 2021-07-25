@@ -33,6 +33,7 @@ namespace Vista
             this.deposito = new DepositoFabrica<Anteojo>("Fabrica");
             this.deposito.DireccionXml = AppDomain.CurrentDomain.BaseDirectory + "AnteojosProducidos.xml";
 
+            ///CAMBIAR 
             this.conexion = new SqlConnection(@"Data Source = DESKTOP-ILTUKAA\SQLEXPRESS; Initial Catalog = dbAnteojosTP4; Integrated Security = True");
             this.Configurardtable();
             this.eventoImagen += this.MostrarImagen;
