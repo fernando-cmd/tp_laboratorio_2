@@ -51,6 +51,7 @@
     <Compile Include="ProduccionRepetidaException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sol.cs" />
+    <Compile Include="Sql.cs" />
     <Compile Include="StockInsumos.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
